@@ -48,7 +48,68 @@ const managerPrompt = () => {
     });
 }
 
-managerPrompt();
+const employeePrompt = () => {
+    return new Promise((resolve, rej) => {
+        inquirer.prompt([
+            {
+                type: "list",
+                message: "Which type of employee would you like to add next?",
+                name: "employeeType",
+                choices: [
+                    "Engineer",
+                    "Intern",
+                    "None"
+                ]
+            },
+            {
+                message: "What is the employee's name?",
+                name: "name",
+                when: ({ employeeType }) => employeeType
+            },
+            {
+                message: "What is the employee's ID?",
+                name: "id",
+                when: ({ employeeType }) => employeeType
+            },
+            {
+                message: "What is the employee's email address?",
+                name: "email",
+                when: ({ employeeType }) => employeeType
+            },
+            {
+                message: "what is the employee's GitHub username?",
+                name: "github",
+                when: ({ employeeType }) => employeeType === "Engineer"
+            },
+            {
+                message: "Which school is the intern from?",
+                name: "school",
+                when: ({ employeeType }) => employeeType === "Intern"
+            }
+        ]).then(answers => {
+            if (answers.employeeType){
+                switch(answers.employeeType){
+                    case "Engineer":
+                        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+                        teamProfile.push(engineer);
+                        break;
+                    case "Intern":
+                        const intern = new Intern(answer.name, answers.id, answers.email, answers.school);
+                        teamProfile.push(intern);
+                        break;
+                }
+                return employeePrompt().then(()=> resolve());
+            } else {
+                return resolve();
+            }
+        })
+    })
+}
+
+managerPrompt().then(()=>{
+   return employeePrompt();
+})
+
 
 
 
