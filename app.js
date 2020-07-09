@@ -58,7 +58,10 @@ const employeePrompt = () => {
                 choices: [
                     "Engineer",
                     "Intern",
-                    "None"
+                    {
+                        name: "No more employees to add",
+                        value: false
+                    }
                 ]
             },
             {
@@ -87,18 +90,18 @@ const employeePrompt = () => {
                 when: ({ employeeType }) => employeeType === "Intern"
             }
         ]).then(answers => {
-            if (answers.employeeType){
-                switch(answers.employeeType){
+            if (answers.employeeType) {
+                switch (answers.employeeType) {
                     case "Engineer":
                         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
                         teamProfile.push(engineer);
                         break;
                     case "Intern":
-                        const intern = new Intern(answer.name, answers.id, answers.email, answers.school);
+                        const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
                         teamProfile.push(intern);
                         break;
                 }
-                return employeePrompt().then(()=> resolve());
+                return employeePrompt().then(() => resolve());
             } else {
                 return resolve();
             }
@@ -106,9 +109,26 @@ const employeePrompt = () => {
     })
 }
 
-managerPrompt().then(()=>{
-   return employeePrompt();
-})
+const createHTMLFile = (htmlPage) => {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR);
+    }
+
+    fs.writeFile(outputPath, htmlPage, "utf-8", (err) => {
+        if(err) throw err;
+        console.log(`Team profile sucessfully generated in ${outputPath}`)
+    });
+}
+
+//call the manager first, then Engineer or Intern
+managerPrompt().then(() => {
+    return employeePrompt();
+}).then(() => {
+    const templateHTML = render(teamProfile)
+    createHTMLFile(templateHTML);
+}).catch((err) => {
+    console.log(err);
+});
 
 
 
@@ -117,77 +137,4 @@ managerPrompt().then(()=>{
 
 
 
-
-//     continuePrompt() {
-//         return inquirer
-//             .prompt([
-//                 {
-//                     type: "confirm",
-//                     name: "addEmployee",
-//                     message: "Would you like to add another Employee?",
-//                 },
-//             ]).then(({ addEmployee }) => {
-//                 if (addEmployee) {
-//                     return this.employeePrompt();
-//                 }
-//                 else {
-//                     console.log("Rendering HTML Page");
-//                     htmlPage = render(employeeList);
-
-//                     fs.writeFile("output/team.html", html, function (error) {
-//                         if (error) {
-//                             return console.log(error);
-//                         }
-//                         console.log("Success!");
-//                     });
-//                 }
-//             }  
-//     }
-// }
-
-//     // const engineerQuestions = [
-//     //     {
-//     //         type: "input",
-//     //         message: "What is your engineer's name?",
-//     //         name: "name",
-//     //     },
-//     //     {
-//     //         type: "input",
-//     //         message: "What is your engineers's id?",
-//     //         name: "id",
-//     //     },
-//     //     {
-//     //         type: "input",
-//     //         message: "What is your engineer's email?",
-//     //         name: "email",
-//     //     },
-//     //     {
-//     //         type: "input",
-//     //         message: "What is your engineer's GitHub username?",
-//     //         name: "github",
-//     //     },
-//     // ];
-
-//     // const internQuestions = [
-//     //     {
-    //         type: "input",
-    //         message: "What is your intern's name?",
-    //         name: "name",
-    //     },
-    //     {
-    //         type: "input",
-    //         message: "What is your intern's id?",
-    //         name: "id",
-    //     },
-    //     {
-    //         type: "input",
-    //         message: "What is your intern's email?",
-    //         name: "email",
-    //     },
-    //     {
-    //         type: "input",
-    //         message: "What is your intern's school?",
-    //         name: "school",
-    //     },
-    // ];
 
