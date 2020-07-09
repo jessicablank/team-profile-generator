@@ -30,7 +30,39 @@ const employeeQuestions = [
     }
 ];
 
+// Always prompt for a manager to start
+employeePrompt("Manager");
 
+//switch questions based on employee type
+function employeePrompt(employeeType) {
+    const typeQuestions = [...employeeQuestions];
+
+    switch (employeeType) {
+        case "Manager":
+            typeQuestions.push({
+                type: "input",
+                message: "What is the manager's office number?",
+                name: "officeNumber",
+            });
+            break;
+        case "Engineer":
+            typeQuestions.push({
+                type: "input",
+                message: "What is the engineer's GitHub username?",
+                name: "github",
+            });
+            break;
+        case "Intern":
+            typeQuestions.push({
+                type: "input",
+                message: "What is the intern's school?",
+                name: "school",
+            });
+            break;
+        default:
+            break;
+    }
+};
 
 
 
@@ -89,7 +121,7 @@ const employeeQuestions = [
 //             }  
 //     }
 // }
-    
+
 //     // const engineerQuestions = [
 //     //     {
 //     //         type: "input",
