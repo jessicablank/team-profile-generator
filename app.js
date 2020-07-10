@@ -55,7 +55,7 @@ const employeePrompt = () => {
         inquirer.prompt([
             {
                 type: "list",
-                message: "Which type of employee would you like to add next?",
+                message: "Use arrow keys to select the next type of employee to enter:",
                 name: "employeeType",
                 choices: [
                     "Engineer",
