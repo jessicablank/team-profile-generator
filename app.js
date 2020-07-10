@@ -16,7 +16,6 @@ const teamProfile = [];
 
 
 const managerPrompt = () => {
-    console.log(`\nPlease enter the manager's details`);
     return new Promise((res, rej) => {
         inquirer
             .prompt([
@@ -65,22 +64,37 @@ const employeePrompt = () => {
                 ]
             },
             {
-                message: "What is the employee's name?",
+                message: "What is the engineer's name?",
                 name: "name",
-                when: ({ employeeType }) => employeeType
+                when: ({ employeeType }) => employeeType === "Engineer"
             },
             {
-                message: "What is the employee's ID?",
+                message: "What is the intern's name?",
+                name: "name",
+                when: ({ employeeType }) => employeeType === "Intern"
+            },
+            {
+                message: "What is the engineer's ID?",
                 name: "id",
-                when: ({ employeeType }) => employeeType
+                when: ({ employeeType }) => employeeType === "Engineer"
             },
             {
-                message: "What is the employee's email address?",
+                message: "What is the intern's ID?",
+                name: "id",
+                when: ({ employeeType }) => employeeType === "Intern"
+            },
+            {
+                message: "What is the engineer's email address?",
                 name: "email",
-                when: ({ employeeType }) => employeeType
+                when: ({ employeeType }) => employeeType === "Engineer"
             },
             {
-                message: "what is the employee's GitHub username?",
+                message: "What is the intern's email address?",
+                name: "email",
+                when: ({ employeeType }) => employeeType === "Intern"
+            },
+            {
+                message: "what is the engineer's GitHub username?",
                 name: "github",
                 when: ({ employeeType }) => employeeType === "Engineer"
             },
@@ -116,7 +130,7 @@ const createHTMLFile = (htmlPage) => {
 
     fs.writeFile(outputPath, htmlPage, "utf-8", (err) => {
         if(err) throw err;
-        console.log(`Team profile sucessfully generated in ${outputPath}`)
+        console.log(`Team profile page sucessfully generated in ${outputPath}`)
     });
 }
 
