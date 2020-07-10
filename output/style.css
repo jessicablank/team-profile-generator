@@ -1,14 +1,19 @@
 .team-heading{
-    background-color:blue;
+    background-color: black;
     color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+   
   
 }
 
 .employee-card{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: lightgrey;
+    font-family: 'Times New Roman', Times, serif;
+    float: left;
 }
 
-
+body{
+    background-image:url("TNG.jpg");
+}
 
