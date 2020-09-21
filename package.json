@@ -8,13 +8,14 @@
     "test": "test"
   },
   "scripts": {
+    "start": "node app.js",
     "test": "jest --verbose test/*"
   },
   "repository": {
     "type": "git",
     "url": ""
   },
-  "author": "",
+  "author": "Jessica Blankemeier",
   "license": "ISC",
   "bugs": {
     "url": ""

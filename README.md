@@ -1,7 +1,11 @@
 # Team Profile Generator
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub](https://img.shields.io/github/followers/jessicablank?label=follow&style=social)
+![Last Commit](https://img.shields.io/github/last-commit/jessicablank/team-profile-generator)
+
 ## Description:  
- A Command Line Interface Application to collect user information about a web-development team and generate an HTML page with contact details for each team member. 
+ A Command Line Interface Application developed as homework for coding bootcamp. 
+ The tests were provided and the assignment was to build a CLI application that passed the tests and created a stylized HTML file. You can see from the [YouTube Video Guide: https://youtu.be/uHwMRGr__9I](https://youtu.be/uHwMRGr__9I) that I was just beginning to understand the power of Node.Js. 
 
     
 ## Table of Contents:
@@ -13,16 +17,25 @@
 * [License](#license-info)
 
 ## Installation Instructions
-All of the folders in this repository are required as well as npm node modules and npm inquirer.
-`npm install`
-`npm i inquirer --save` 
+Fork, Clone, or Download and then install dependencies:
+```
+npm install
+```
+Open the terminal to run tests: 
+```
+npm run test
+```
+Run the Interface:
+```
+npm start
+```
 
 ## Usage
-[YouTube Video Guide](https://youtu.be/uHwMRGr__9I)
+[YouTube Video Guide: https://youtu.be/uHwMRGr__9I](https://youtu.be/uHwMRGr__9I)
 
 ![Generated_HTML](https://github.com/jessicablank/team-profile-generator/blob/master/homepagescreenshot.PNG)
 
-* Start the project in your terminal by entering `node app.js` and follow the prompts to enter team member data. 
+* Start the project in your terminal by entering `npm start` and follow the prompts to enter team member data.
 * Once you indicate there are no more team members to enter, the application will generate a static HTML page with the team member data. 
 * If you run the application again, the previous data will overwrite the `team.html` file! If you want to save your work, be sure to copy the entire output folder into another folder so the `style.css` and html background picture will persist. 
 
@@ -41,8 +54,8 @@ Other tests include:
 * THEN the application renders a stylized HTML file presenting cards with team member data.  
 
 ## Questions
-You can reach the author, Jessica Blankemeier,  via [github](http://github.com/jessicablank) and [email](mailto:jessicablankemeier@gmail.com)
-![GitHub](https://img.shields.io/github/followers/jessicablank?label=follow&style=social)
+You can reach the author, Jessica Blankemeier, via [jessicablankemeier@gmail.com](mailto:jessicablankemeier@gmail.com)
+
 
 ## License
 Copyright 2020 - present Jessica Blankemeier.
