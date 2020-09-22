@@ -12,6 +12,7 @@
 * [Installation](#installation-instructions)
 * [Usage](#usage)
 * [Tests](#tests)
+* [File Tree](#file-tree)
 * [Questions](#questions)
 * [License](#license-info)
 
@@ -48,6 +49,32 @@ Other tests include:
 * WHEN the user selects to enter intern data, THEN the user is prompted to enter information excluding a phone number or GitHub account, but including a school name.
 * WHEN the user selects no more employees to enter,
 * THEN the application renders a stylized HTML file presenting cards with team member data.  
+
+## File Tree
+├── app.js
+├── lib
+|  ├── Employee.js
+|  ├── Engineer.js
+|  ├── htmlRenderer.js
+|  ├── Intern.js
+|  └── Manager.js
+├── output
+|  ├── index.html
+|  ├── style.css
+|  └── TNG.jpg
+├── package-lock.json
+├── package.json
+├── README.md
+├── templates
+|  ├── engineer.html
+|  ├── intern.html
+|  ├── main.html
+|  └── manager.html
+└── test
+   ├── Employee.test.js
+   ├── Engineer.test.js
+   ├── Intern.test.js
+   └── Manager.test.js
 
 ## Questions
 You can reach the author, Jessica Blankemeier, via [jessicablankemeier@gmail.com](mailto:jessicablankemeier@gmail.com)
