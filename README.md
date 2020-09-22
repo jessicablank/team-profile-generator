@@ -51,6 +51,7 @@ Other tests include:
 * THEN the application renders a stylized HTML file presenting cards with team member data.  
 
 ## File Tree
+```
 ├── app.js
 ├── lib
 |  ├── Employee.js
@@ -75,7 +76,7 @@ Other tests include:
    ├── Engineer.test.js
    ├── Intern.test.js
    └── Manager.test.js
-
+```
 ## Questions
 You can reach the author, Jessica Blankemeier, via [jessicablankemeier@gmail.com](mailto:jessicablankemeier@gmail.com)
 
