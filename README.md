@@ -11,7 +11,6 @@
 ## Table of Contents:
 * [Installation](#installation-instructions)
 * [Usage](#usage)
-* [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
 * [License](#license-info)
@@ -31,17 +30,14 @@ npm start
 ```
 
 ## Usage
-[YouTube Video Guide: https://youtu.be/uHwMRGr__9I](https://youtu.be/uHwMRGr__9I)
+:tv: [YouTube Video Guide: https://youtu.be/uHwMRGr__9I](https://youtu.be/uHwMRGr__9I)
 
 ![Generated_HTML](https://github.com/jessicablank/team-profile-generator/blob/master/homepagescreenshot.PNG)
 
 * Start the project in your terminal by entering `npm start` and follow the prompts to enter team member data.
 * Once you indicate there are no more team members to enter, the application will generate a static HTML page with the team member data. 
 * If you run the application again, the previous data will overwrite the `team.html` file! If you want to save your work, be sure to copy the entire output folder into another folder so the `style.css` and html background picture will persist. 
-
-## Contributing
-Create a pull request. 
-
+ 
 ## Tests
 There are pre-coded tests utilizing npm jest built into the application. Simply type `npm run test` into the terminal to see those tests.
 Other tests include: 
